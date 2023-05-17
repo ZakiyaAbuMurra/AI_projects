@@ -1,0 +1,100 @@
+package application;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.Group;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.SplitPane;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
+import javafx.scene.layout.Pane ;
+
+
+public class zeinaController  {
+	ObservableList<String> palestinecities = FXCollections.observableArrayList("Salfit", "Nablus", "Ramallah", "Jenin",
+			"Jerusalem", "Tulkarm", "Jerico", "Bethlehem", "jaffa", "Acre", "Tubas", "Ramla", "Ashkelon", "Gaza",
+			"Hebron", "Rafah", "Khan Younes", "Beersheba", "Qalqilya","Safed", "Galilee", "Nazareth",
+			"Tiberius", "Haifa", "Besan");
+
+	ObservableList<String> palestinecities2 = FXCollections.observableArrayList("Salfit", "Nablus", "Ramallah", "Jenin",
+			"Jerusalem", "Tulkarm", "Jerico", "Bethlehem", "jaffa", "Acre", "Tubas", "Ramla", "Ashkelon", "Gaza",
+			"Hebron", "Rafah", "Khan Younes", "Beersheba", "Qalqilya","Safed", "Galilee", "Nazareth",
+			"Tiberius", "Haifa", "Besan");
+	
+	@FXML
+	private ListView<String> listView; 
+	
+	@FXML
+	private ComboBox<String> FromBox;
+
+	@FXML
+	private ComboBox<String> ToBox;
+
+	@FXML
+	private AnchorPane main_pane;
+
+	@FXML
+	private Label lable_num1;
+
+	@FXML
+	private Label lable_num2;
+	  
+	@FXML
+	  private Button start_btn;
+	
+	 @FXML
+	    private Label dis_label;
+	 
+	  @FXML
+	    private Label path_label;
+	  @FXML
+	    private Pane pane;
+	    @FXML
+	    void Strat(ActionEvent event) {
+	    	
+
+	    }
+	    @FXML
+	    private SplitPane splitpane;
+	    @FXML
+	    private AnchorPane anchor;
+	   	@FXML
+	private void initialize() {
+	/*	FromBox.setValue("Select");
+		FromBox.setItems(palestinecities);
+      
+		ToBox.setValue("Select");
+		ToBox.setItems(palestinecities2);*/
+		Line line = new Line();
+		Group root1 = new Group() ; 
+		line.setStartY(226);
+		line.setStartX(161);
+		line.setEndX(155);
+		line.setEndY(324);
+		line.setStroke(Color.RED);
+		line.setStrokeWidth(1);
+		root1.getChildren().addAll(line);
+		main_pane.getChildren().addAll(root1);
+		
+
+		
+		
+	}
+	
+	
+	  @FXML
+	    void runCode(ActionEvent event) {
+		  ///here called the algorithm 
+	    }
+
+}

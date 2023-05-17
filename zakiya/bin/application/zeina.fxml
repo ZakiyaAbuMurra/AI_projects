@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchar" prefHeight="739.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.zeinaController">
+   <children>
+      <Pane fx:id="pane" prefHeight="681.0" prefWidth="466.0" />
+      <ImageView fitHeight="757.0" fitWidth="465.0" layoutX="1.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../../../../../../../../Downloads/WhatsApp%20Image%202022-05-14%20at%209.08.25%20PM.jpeg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="path_text" layoutX="11.0" layoutY="329.0" prefHeight="25.0" prefWidth="150.0" promptText="Path">
+         <effect>
+            <DropShadow height="3.67" radius="0.4175" spread="0.66" width="0.0">
+               <color>
+                  <Color red="0.30009475350379944" green="0.3100000023841858" blue="0.120899997651577" />
+               </color>
+            </DropShadow>
+         </effect>
+         <font>
+            <Font name="Californian FB" size="12.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="source_combo" layoutX="22.0" layoutY="45.0" prefWidth="150.0">
+         <effect>
+            <Lighting diffuseConstant="2.0" specularConstant="0.0" specularExponent="40.0" surfaceScale="0.0">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.5333333611488342" green="0.729411780834198" blue="0.5843137502670288" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </ComboBox>
+      <ComboBox fx:id="dest_combo" layoutX="22.0" layoutY="108.0" prefWidth="150.0">
+         <effect>
+            <Lighting diffuseConstant="1.85" specularConstant="0.0" specularExponent="40.0" surfaceScale="0.0">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.5333333611488342" green="0.729411780834198" blue="0.5843137502670288" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </ComboBox>
+      <Label layoutX="18.0" layoutY="307.0" text="Path">
+         <font>
+            <Font name="Times New Roman Italic" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="dist_text" layoutX="12.0" layoutY="400.0" prefHeight="25.0" prefWidth="101.0" promptText="Km">
+         <effect>
+            <DropShadow height="17.59" radius="3.8975" spread="0.65" width="0.0">
+               <color>
+                  <Color red="0.5592105388641357" green="0.6151315569877625" blue="0.6710526347160339" />
+               </color>
+            </DropShadow>
+         </effect>
+         <font>
+            <Font name="Californian FB" size="12.0" />
+         </font>
+      </TextField>
+      <Label layoutX="20.0" layoutY="379.0" text="Distance">
+         <font>
+            <Font name="Times New Roman Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="23.0" text="Source">
+         <font>
+            <Font name="Times New Roman Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="87.0" text="Destination">
+         <font>
+            <Font name="Times New Roman Italic" size="13.0" />
+         </font>
+      </Label>
+      <Line endX="93.0" layoutX="111.0" layoutY="153.0" startX="-98.0" />
+      <Label layoutX="24.0" layoutY="166.0" text="Select Algorithim">
+         <font>
+            <Font name="Times New Roman Italic" size="13.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="algo" layoutX="22.0" layoutY="191.0" prefHeight="25.0" prefWidth="150.0">
+         <effect>
+            <Lighting diffuseConstant="2.0" specularConstant="0.0" specularExponent="40.0" surfaceScale="0.0">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.5333333611488342" green="0.729411780834198" blue="0.5843137502670288" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </ComboBox>
+      <Label layoutX="24.0" layoutY="216.0" text="Type of heuristic ">
+         <font>
+            <Font name="Times New Roman Italic" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="69.0" layoutY="289.0" mnemonicParsing="false" onAction="#run" text="Run" textFill="#d00808">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font>
+      </Button>
+      <Circle fill="#acb1b5" layoutX="215.0" layoutY="492.0" radius="4.0" stroke="#362b2b" strokeType="INSIDE" />
+      <Label layoutX="270.0" layoutY="444.0" text="Bethlehem" textFill="#0d0000">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="201.0" layoutY="496.0" prefHeight="17.0" prefWidth="35.0" text="Dura">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font>
+      </Label>
+      <Circle fill="#aaaeb2" layoutX="260.0" layoutY="455.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#a6b5c3" layoutX="299.0" layoutY="532.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="281.0" layoutY="536.0" text="Halhoul">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font>
+      </Label>
+      <Circle fill="#b3bfc9" layoutX="349.0" layoutY="390.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="331.0" layoutY="397.0" text="Jericho">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font>
+      </Label>
+      <Circle fill="#a6b8c9" layoutX="240.0" layoutY="329.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="247.0" layoutY="322.0" prefHeight="8.0" prefWidth="47.0" text="Qalqelya">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </Label>
+      <Circle fill="#a9b5bf" layoutX="277.0" layoutY="285.0" radius="4.0" stroke="#867171" strokeType="INSIDE" />
+      <Label layoutX="281.0" layoutY="277.0" text="Sabastia">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font>
+      </Label>
+      <Circle fill="#a1adb9" layoutX="345.0" layoutY="263.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="251.0" layoutY="346.0" text="Salfit" />
+      <Circle fill="#a1adb9" layoutX="244.0" layoutY="355.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="331.0" layoutY="269.0" text="Tubas">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font>
+      </Label>
+      <Line endX="53.0" layoutX="117.0" layoutY="281.0" startX="-106.0" />
+      <ComboBox fx:id="hurstic" layoutX="22.0" layoutY="242.0" prefHeight="25.0" prefWidth="150.0">
+         <effect>
+            <Lighting diffuseConstant="2.0" specularConstant="0.0" specularExponent="40.0" surfaceScale="0.0">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.5333333611488342" green="0.729411780834198" blue="0.5843137502670288" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </ComboBox>
+   </children>
+</AnchorPane>

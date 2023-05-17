@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="755.0" style="-fx-background-color: #fff;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.controller.HomeController">
+   <children>
+      <ImageView fitHeight="425.0" fitWidth="759.0" layoutX="-4.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/Ramallah-Map.jpeg" />
+         </image>
+      </ImageView>
+      <Line endX="475.99993896484375" endY="-0.295074462890625" layoutX="280.0" layoutY="416.0" startX="-288.0" startY="-0.295074462890625" />
+      <Button onAction="#findShortestPath" fx:id="find_btn" layoutX="338.0" layoutY="512.0" mnemonicParsing="false" text="Find Path" />
+      <TextField fx:id="src_id" layoutX="122.0" layoutY="477.0" />
+      <TextField fx:id="dest_id" layoutX="122.0" layoutY="538.0" />
+      <TextArea fx:id="ans_area" layoutX="483.0" layoutY="455.0" prefHeight="135.0" prefWidth="174.0" />
+      <Text layoutX="123.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source" />
+      <Text layoutX="125.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destination" />
+      <Text layoutX="424.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-------&gt;" />
+   </children>
+</AnchorPane>

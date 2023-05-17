@@ -1,0 +1,114 @@
+package application;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+
+
+
+
+public class zeinaController {
+	ObservableList<String> palestinecities = FXCollections.observableArrayList("Salfit", "Nablus", "Ramallah", "Jenin",
+			"Jerusalem", "Tulkarm", "Jerico", "Bethlehem", "jaffa", "Acre", "Tubas", "Ramla", "Ashkelon", "Gaza",
+			"Hebron", "Beersheba", "Qalqilya","Safed", "Galilee", "Nazareth",
+			"Tiberius", "Haifa", "Besan");
+
+	ObservableList<String> palestinecities2 = FXCollections.observableArrayList("Salfit", "Nablus", "Ramallah", "Jenin",
+			"Jerusalem", "Tulkarm", "Jerico", "Bethlehem", "jaffa", "Acre", "Tubas", "Ramla", "Ashkelon", "Gaza",
+			"Hebron", "Beersheba", "Qalqilya","Safed", "Galilee", "Nazareth",
+			"Tiberius", "Haifa", "Besan");
+	
+	ObservableList<String> Algorithims = FXCollections.observableArrayList("DFS","UCS","Astar");
+	ObservableList<String> TypeOfHurstic  = FXCollections.observableArrayList("Walking Distance" , "Aerial Distance");
+
+	  @FXML
+	    private ComboBox<String> hurstic;
+	  
+	    @FXML
+	    private ComboBox<String> algo;
+
+	    @FXML
+	    private ComboBox<String> dest_combo;
+
+	    @FXML
+	    private TextField dist_text;
+
+	    @FXML
+	    private TextField path_text;
+
+	    @FXML
+	    private ComboBox<String> source_combo;
+	 //   readFile file = new readFile(); 
+	 
+	  
+	    
+	 Algorithims algorithms = new Algorithims(); 
+	    
+	    
+	
+	    @FXML
+		private void initialize() {
+	    	
+	    	source_combo.setValue("Select");
+	    	source_combo.setItems(palestinecities);
+	    	algo.setValue("Select");
+	    	algo.setItems(Algorithims);
+	    	hurstic.setItems(TypeOfHurstic);
+	    	hurstic.setValue("Select ");
+	    	
+	    	
+
+
+	    	dest_combo.setValue("Select");
+	    	dest_combo.setItems(palestinecities2);
+	    	
+	    	
+		}
+
+
+	
+	    @FXML
+	    void run(ActionEvent event) throws FileNotFoundException {
+	    	String filePath = "city.txt";
+	        readFile get_data = new readFile(filePath) ;
+	        ArrayList <Node>Graph = get_data.read_file() ;
+	        HashMap<String,Integer>mp = get_data.getMp() ;
+	        HashMap<String,HashMap<String,Double>>des = get_data.getDes() ;
+	        Algorithims test = new Algorithims(Graph,mp,algo.getValue().toString(),source_combo.getValue().toString() , dest_combo.getValue().toString(),'u','w',des);
+
+	        ArrayList<Edges>Path = test.Runner();
+	        System.out.println("-----------------------------------------------------------------");
+
+	       // test1.Runner();
+
+	        double dest = 0 ;
+	        StringBuilder str  = new StringBuilder();
+	        
+	       for(Edges i : Path)
+	       {
+	           dest+=i.getDestance();
+	           str.append(i.getNode().getName()+" "+i.getDestance()+"----->");
+	           
+	           
+	           /*System.out.print(i.getNode().getName()+" "+i.getDestance()+"----->");*/
+	       }
+	       path_text.setText(str.toString());
+	       dist_text.setText(Double.toString(dest));
+	        System.out.println("\n"+dest);
+
+	//
+	 }
+	    	 
+	    
+	    
+	   
+
+}
